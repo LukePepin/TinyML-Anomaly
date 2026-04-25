@@ -21,6 +21,9 @@ tinyml-anomaly/
 ├── models/             # Exported model artifacts (.keras, .joblib)
 ├── notebooks/          # Experimentation and EDA
 ├── results/            # Analysis outputs and experiment logs
+│   ├── sweeps/         # Hyperparameter sweep configurations
+│   ├── summaries/      # Global sweep metrics and best settings
+│   └── reports/        # Data audits and final evaluation metrics
 └── src/                # Core Python source code
     ├── analysis/       # Analytic tools and auditing
     ├── data_collection/# Sensor streaming and logging

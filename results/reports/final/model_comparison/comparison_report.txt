@@ -1,0 +1,9 @@
+=== NON-TINYML MODEL ===
+Threshold: 0.182970
+Normal:  P=0.8125, R=1.0000, F1=0.8966, Support=403
+Anomaly: P=1.0000, R=0.7669, F1=0.8681, Support=399
+
+=== TINYML MODEL ===
+Threshold: 1.265591
+Normal:  P=0.5310, R=1.0000, F1=0.6936, Support=403
+Anomaly: P=1.0000, R=0.1078, F1=0.1946, Support=399

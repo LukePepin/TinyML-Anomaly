@@ -1,0 +1,10 @@
+=== Dummy Classifier Explanation ===
+A Dummy Classifier is a simple baseline model used to gauge the lower-bound performance of a real machine learning model. In this case, we are using the 'stratified' strategy (based on include class split).
+
+What does it do?
+1. It looks at the percentage of Normal vs. Anomaly samples in your TRAINING data.
+2. When making a prediction on the test data, it simply guesses randomly, but biased by that training percentage.
+3. For example, if your training data has 50% anomalies and 50% normal windows, it flips a fair coin. If it was 80/20, it uses a weighted coin. It completely ignores all inputs (accelerometer/gyro).
+
+If your actual autoencoder model cannot significantly beat these metrics (like Precision, Recall, F1), then the neural network isn't actually learning meaningful patterns from the Arduino sensor data.
+====================================

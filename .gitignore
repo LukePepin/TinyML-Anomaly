@@ -150,12 +150,6 @@ cython_debug/
 .vscode/
 
 # Project specific
-data/*.csv
-data/*.json
-data/*.npz
-models/*.keras
-models/*.joblib
-results/
+# (Data and docs are tracked, but heavy raw sweep data is excluded)
+results/sweeps/
 *.mp4
-*.docx
-*.pdf

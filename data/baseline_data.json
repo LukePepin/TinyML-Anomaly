@@ -1,0 +1,32 @@
+{
+    "dataset": "baseline_data",
+    "file": "tinyml-anomaly/data/baseline_data.csv",
+    "description": "Baseline nominal runs for model training.",
+    "date_recorded": "2026-04-08",
+    "metrics": {
+        "rows": 43337
+    },
+    "schema": [
+        "NodeID",
+        "Accel_X",
+        "Accel_Y",
+        "Accel_Z",
+        "Gyro_X",
+        "Gyro_Y",
+        "Gyro_Z",
+        "Timestamp"
+    ],
+    "collection": {
+        "robot_motion_script": "tinyml-anomaly/MVS_data_collection.py",
+        "logger_script": "tinyml-anomaly/phase2_datalogger.py",
+        "logger_command": "python tinyml-anomaly/phase2_datalogger.py --port COM9 --baud 115200 --axes 6 --duration 0 --out auto --node-id niryo-wrist-imu"
+    },
+    "labels": {
+        "class_name": "normal",
+        "class_value": 0
+    },
+    "anomalies": {
+        "collision_events": []
+    },
+    "notes": "No collision boundaries occur in this baseline. Collisions encountered during data collection triggered automatic recovery (in script) or the software ESTOP pipeline, meaning they are excluded from nominal data."
+}

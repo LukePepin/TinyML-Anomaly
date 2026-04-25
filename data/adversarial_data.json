@@ -1,0 +1,47 @@
+{
+  "dataset": "adversarial_balanced_43k",
+  "file": "tinyml-anomaly/data/adversarial_balanced_43k.csv",
+  "date_recorded": "2026-04-15",
+  "metrics": {
+    "target_rows": 43000,
+    "actual_rows": 43000,
+    "seed": 42
+  },
+  "schema": [
+    "NodeID",
+    "Accel_X",
+    "Accel_Y",
+    "Accel_Z",
+    "Gyro_X",
+    "Gyro_Y",
+    "Gyro_Z",
+    "Timestamp"
+  ],
+  "sampling": {
+    "strategy": "balanced_stratified_equal_share_with_remainder",
+    "sources": [
+      {
+        "file": "tinyml-anomaly/data/adversarial1_data.csv",
+        "rows_available": 43606,
+        "rows_sampled": 22273
+      },
+      {
+        "file": "tinyml-anomaly/data/adversarial2_data.csv",
+        "rows_available": 20727,
+        "rows_sampled": 20727
+      }
+    ]
+  },
+  "collection": {
+    "robot_motion_scripts": [
+      "tinyml-anomaly/robot_adversarial_baseline.py",
+      "tinyml-anomaly/robot_adversarial_baseline_2.py"
+    ],
+    "logger_script": "tinyml-anomaly/phase2_datalogger.py",
+    "logger_command": "python tinyml-anomaly/phase2_datalogger.py --port COM9 --baud 115200 --axes 6 --duration 0 --out auto --node-id niryo-wrist-imu"
+  },
+  "labels": {
+    "class_name": "adversarial",
+    "class_value": 1
+  }
+}
