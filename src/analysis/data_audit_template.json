@@ -1,0 +1,86 @@
+{
+  "week": "Week 2",
+  "expected_schema": [
+    "NodeID",
+    "Accel_X",
+    "Accel_Y",
+    "Accel_Z",
+    "Gyro_X",
+    "Gyro_Y",
+    "Gyro_Z",
+    "Timestamp"
+  ],
+  "schema_match_between_files": true,
+  "datasets": {
+    "baseline": {
+      "file": "data\\baseline_data.csv",
+      "rows": 43337,
+      "columns": [
+        "NodeID",
+        "Accel_X",
+        "Accel_Y",
+        "Accel_Z",
+        "Gyro_X",
+        "Gyro_Y",
+        "Gyro_Z",
+        "Timestamp"
+      ],
+      "schema_match_expected": true,
+      "null_counts": {
+        "NodeID": 0,
+        "Accel_X": 0,
+        "Accel_Y": 0,
+        "Accel_Z": 0,
+        "Gyro_X": 0,
+        "Gyro_Y": 0,
+        "Gyro_Z": 0,
+        "Timestamp": 0
+      },
+      "timestamp_parse_failures": 0,
+      "timestamp_monotonic_increasing": true,
+      "timestamp_gap_stats_seconds": {
+        "count": 43336,
+        "mean_s": 0.02991255348901606,
+        "std_s": 0.0014456441934795998,
+        "min_s": 0.000515,
+        "max_s": 0.03248,
+        "gaps_gt_1s": 0
+      }
+    },
+    "adversarial_balanced_43k": {
+      "file": "data\\adversarial_balanced_43k.csv",
+      "rows": 43000,
+      "columns": [
+        "NodeID",
+        "Accel_X",
+        "Accel_Y",
+        "Accel_Z",
+        "Gyro_X",
+        "Gyro_Y",
+        "Gyro_Z",
+        "Timestamp"
+      ],
+      "schema_match_expected": true,
+      "null_counts": {
+        "NodeID": 0,
+        "Accel_X": 0,
+        "Accel_Y": 0,
+        "Accel_Z": 0,
+        "Gyro_X": 0,
+        "Gyro_Y": 0,
+        "Gyro_Z": 0,
+        "Timestamp": 0
+      },
+      "timestamp_parse_failures": 0,
+      "timestamp_monotonic_increasing": false,
+      "timestamp_gap_stats_seconds": {
+        "count": 42999,
+        "mean_s": -0.0013916270843506136,
+        "std_s": 1030.2453598444217,
+        "min_s": -2274.974639,
+        "max_s": 2285.115509,
+        "gaps_gt_1s": 21466
+      }
+    }
+  }
+}
