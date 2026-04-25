@@ -18,21 +18,25 @@ tinyml-anomaly/
 ├── data/               # Raw and processed datasets (CSV, NPZ)
 ├── docs/               # Reports, proposals, and media
 ├── firmware/           # Arduino Nano 33 BLE Sense code
-├── ml/                 # ML pipelines and experiment tracking
 ├── models/             # Exported model artifacts (.keras, .joblib)
 ├── notebooks/          # Experimentation and EDA
-├── results/            # Analysis outputs (plots, metrics)
+├── results/            # Analysis outputs and experiment logs
 └── src/                # Core Python source code
+    ├── analysis/       # Analytic tools and auditing
     ├── data_collection/# Sensor streaming and logging
-    └── analysis/       # Analytic tools and auditing
+    └── ml/             # ML pipeline broken down by function
+        ├── preprocessing/
+        ├── training/
+        ├── evaluation/
+        └── deployment/
 ```
 
 ## 🛠️ Workflow
 
 1.  **Data Collection**: Stream 6-axis IMU data from the Niryo wrist via `src/data_collection/stream_niryo.py`.
-2.  **Preprocessing**: Use `notebooks/` or `src/analysis/` to window and normalize the data.
-3.  **Training**: Train a symmetric undercomplete autoencoder (PyTorch/TensorFlow).
-4.  **Export**: Quantize and export the model to C++ headers using `src/ml/export_artifacts.py`.
+2.  **Preprocessing**: Clean and window data using scripts in `src/ml/preprocessing/`.
+3.  **Training**: Train models and run sweeps using `src/ml/training/`.
+4.  **Export**: Quantize and export artifacts using `src/ml/deployment/export_artifacts.py`.
 5.  **Deployment**: Flash the `firmware/` to the Arduino Nano 33 BLE Sense.
 
 ## 📊 Analytic Tools
